@@ -1,0 +1,111 @@
+
+
+input[type=text], input[type=password], input[type=number], input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    width: 100%;
+}
+
+.signupbtn{
+  color: black;
+  background: #D3D3D3;
+  background: -moz-linear-gradient(top, #D3D3D3 0%, #A9A9A9 100%); /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D3D3D3), color-stop(100%,#A9A9A9)); /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #D3D3D3 0%,#A9A9A9 100%); /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, ##D3D3D3 0%,#A9A9A9 100%); /* Opera 11.10+ */
+
+  background: linear-gradient(to bottom, #D3D3D3 0%,#A9A9A9 100%); /* W3C standard, IE10+ */
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D3D3D3', endColorstr='#A9A9A9',GradientType=0 ); /* IE6-9 */
+}
+
+.signupbtn:hover,.signupbtn:active,.signupbtn:focus{
+background: #A9A9A9;
+  background: -moz-linear-gradient(top, #A9A9A9 0%, #808080 100%); /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A9A9A9), color-stop(100%,#808080)); /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #A9A9A9 0%,#808080 100%); /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #A9A9A9 0%,#808080 100%); /* Opera 11.10+ */
+
+  background: linear-gradient(to bottom, #A9A9A9 0%,#808080 100%); /* W3C standard, IE10+ */
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A9A9A9', endColorstr='#808080',GradientType=0 ); /* IE6-9 */
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    color: black;
+    background-color: #f55858;
+    background: -moz-linear-gradient(top, #f55858 0%, #f44a4a 100%); /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f55858), color-stop(100%,#f44a4a)); /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #f55858 0%,#f44a4a 100%); /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #f55858 0%,#f44a4a 100%); /* Opera 11.10+ */
+
+  background: linear-gradient(to bottom, #f55858 0%,#f44a4a 100%); /* W3C standard, IE10+ */
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f55858', endColorstr='#f44a4a',GradientType=0 ); /* IE6-9 */
+}
+
+.cancelbtn:hover,.cancelbtn:active,.cancelbtn:focus{
+    padding: 14px 20px;
+    color: black;
+    background-color: #f44a4a;
+    background: -moz-linear-gradient(top, #f44a4a 0%, #f33c3c 100%); /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f44a4a), color-stop(100%,#f33c3c)); /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #f44a4a 0%,#f33c3c 100%); /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #f44a4a 0%,#f33c3c 100%); /* Opera 11.10+ */
+
+  background: linear-gradient(to bottom, #f44a4a 0%,#f33c3c 100%); /* W3C standard, IE10+ */
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f44a4a', endColorstr='#f33c3c',GradientType=0 ); /* IE6-9 */
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+        width: 100%;
+    }
+}
+

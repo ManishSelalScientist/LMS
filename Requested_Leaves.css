@@ -1,0 +1,69 @@
+table {
+	margin: auto;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", "Segoe Ui";
+	font-size: 12px;
+}
+
+h1 {
+	margin: 25px auto 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 17px;
+}
+
+table td {
+	transition: all .5s;
+}
+/* Table */
+		
+.data-table {
+	border-collapse: collapse;
+	font-size: 14px;
+}
+
+.data-table th, 
+.data-table td {
+	border: 1px solid #e1edff;
+	padding: 14px 16px;
+}
+
+.data-table caption {
+	margin: 7px;
+}
+
+/* Table Header */
+
+.data-table thead th {
+	background-color: #808080;
+	color: black;
+	border-color: black;
+	text-transform: uppercase;
+}
+
+/* Table Body */
+
+.data-table tbody td {
+	background-color: #D3D3D3;
+}
+
+.data-table tbody td:first-child,
+.data-table tbody td:nth-child(4),
+.data-table tbody td:last-child {
+	text-align: right;
+}
+
+.data-table tbody tr:hover td {
+	background-color: #A9A9A9;
+}
+
+#myInput {
+    background-image: url('search.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+

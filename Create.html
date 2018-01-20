@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin User Create</title>
+  <link rel="stylesheet" type="text/css" href="Dashboard.css">
+  <link rel="stylesheet" type="text/css" href="Sign_Up_Form.css">
+</head>
+<body>
+    <ul id = "menu">
+        <li><a href="Admin_Dashboard.php">Home</a></li>
+        <li><a class="drop">Admin</a>
+            <div class="dropdown_Admin">
+                <div class="col_1">
+                    <p><a href="List_Users.php">Users</a></p>
+                </div>
+                <div class="col_2">
+                    <p><a href="Create.html">Create</a></p>
+                </div>
+                <div class="col_3">
+                    <p><a href="Leave_Balance.php">Leave Balance</a></p>
+                </div>
+            </div>
+        </li>
+        <li><a class="drop">HR Admin</a>
+            <div class="dropdown_HR_Admin">
+                <div class="col_1">
+                    <p><a href="#">Link1</a></p>
+                </div>
+                <div class="col_2">
+                    <p><a href="#">Link2</a></p>
+                </div>
+                <div class="col_3">
+                    <p><a href="#">Link3</a></p>
+                </div>              
+        </li>
+        <li><a href="Requested_Leaves.php">Approved Leaves</a></li>
+        <li><a href="Admin_My_Leaves.php">My Leaves</a></li>
+        <li><a href="https://www.india.gov.in/calendar" target="Blank">Calendar</a></li>
+        <li><a href="Admin_Request_Leave.php">Request Leave</a></li>
+        <li class="menu_right"><a href="Sign_Out.php">Sign Out</a></li>
+    </ul>
+
+<form action="Create.php" method="post" onsubmit="return validate(this);">
+  <div class="container">
+    <label><b>User Name</b></label>
+    <input type="text" placeholder="Enter Name" id="name" name="name" onkeydown="upperCaseF(this)" required>
+
+    <label><b>User Id</b></label>
+    <input type="number" maxlength="6" placeholder="Enter Id" id="id" name="id" required>
+
+    <label><b>Designation</b></label>
+    <input list="select_designation" type="text" placeholder="Designation "id="designation" name="designation" onkeydown="upperCaseF(this)" required/>
+    <datalist id="select_designation">
+    <option value="Scientist-B">
+    <option value="Scientist-C">
+    <option value="Scientist-D">
+    <option value="Scientist-E">
+    <option value="Scientist-F">
+    <option value="Scientist-G">
+    <option value="Scientist-H">
+    </datalist> 
+
+    <label><b>Department</b></label>
+    <input list="select_department" type="text" placeholder="Enter Department" id="department" name="department" onkeydown="upperCaseF(this)"required>
+    <datalist id="select_department">
+    <option value="IT">
+    <option value="MIS">
+    </datalist>
+
+    <label><b>Reporting Officer</b></label>
+    <input list="select_reporting" type="text" placeholder="Reporting Officer" id="reporting" name="reporting" onkeydown="upperCaseF(this)"required>
+    <datalist id="select_reporting">
+    <option value="SURESH CHANDRA">
+    <option value="A K UPADHYAY">
+    <option value="C S BISHT">
+    </datalist>
+
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" id="email" name="email" pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" required>
+    
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Password" id="password" name="password" required>
+
+    <div class="clearfix">
+      <button type="submit" class="signupbtn"><b>Create</b></button>
+      <button type="button" class="cancelbtn" onclick="window.location.reload()"><b>Cancel</b></button>
+    </div>
+  </div>
+</form>
+<script type="text/javascript">
+function upperCaseF(a){
+    setTimeout(function(){
+        a.value = a.value.toUpperCase();
+    }, 1);
+}
+</script>
+</body>
+</html>
+

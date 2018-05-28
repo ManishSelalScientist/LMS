@@ -25,8 +25,15 @@ mysql_close($dbhandle);
     <label><b>User Id</b></label>
     <input type="number" maxlength="6" placeholder="Enter Id" id="id" name="id" required>
 
+    <label><b>Gender</b></label>
+    <input list="select_Gender" type="text" placeholder="Gender" id="gender" name="gender" onkeydown="upperCaseF(this)" required/>
+    <datalist id="select_Gender">
+    <option value="Male">
+    <option value="Female">
+    </datalist> 
+
     <label><b>Designation</b></label>
-    <input list="select_designation" type="text" placeholder="Designation "id="designation" name="designation" onkeydown="upperCaseF(this)" required/>
+    <input list="select_designation" type="text" placeholder="Designation" id="designation" name="designation" onkeydown="upperCaseF(this)" required/>
     <datalist id="select_designation">
     <option value="Scientist-B">
     <option value="Scientist-C">
@@ -34,22 +41,74 @@ mysql_close($dbhandle);
     <option value="Scientist-E">
     <option value="Scientist-F">
     <option value="Scientist-G">
-    <option value="Scientist-H">
-    </datalist> 
+    <option value="SO-SB">
+    <option value="SA-B">
+    <option value="SA-A">
+    <option value="TM-A">
+    <option value="TM-B">
+    <option value="TM-C">
+    <option value="TM-D">
+    <option value="TM-E">
+    <option value="TM-F">
+    <option value="TM-G">
+    <option value="TM-H">
+    <option value="TM-I">
+    <option value="ASSITANT">
+    <option value="ASSITANT-A">
+    <option value="ASSITANT-B">
+    <option value="ASSITANT-C">
+    <option value="PA">
+    <option value="SCD">
+    <option value="JHT">
+    <option value="DEPUTY DIRECTOR">
+    <option value="DIRECTOR">
+    <option value="STENO">
+    <option value="LA-A">
+    <option value="LA-B">
+    </datalist>
 
     <label><b>Department</b></label>
     <input list="select_department" type="text" placeholder="Enter Department" id="department" name="department" onkeydown="upperCaseF(this)"required>
     <datalist id="select_department">
-    <option value="IT">
-    <option value="MIS">
+    <option value="ADMINISTRATION">
+    <option value="COMPONENT">
+    <option value="CSC">
+    <option value="DIRECTOR OFFICE">
+    <option value="E CAL">
+    <option value="EMI/EMC">
+    <option value="ENV">
+    <option value="QA">
+    <option value="NE CAL">
+    <option value="SAFETY">
+    <option value="SYSTEM">
     </datalist>
 
     <label><b>Reporting Officer</b></label>
     <input list="select_reporting" type="text" placeholder="Reporting Officer" id="reporting" name="reporting" onkeydown="upperCaseF(this)"required>
     <datalist id="select_reporting">
+    <option value="C S BISHT">
     <option value="SURESH CHANDRA">
     <option value="A K UPADHYAY">
-    <option value="C S BISHT">
+    <option value="ASHOK KUMAR ROHILLA">
+    <option value="A U KHAN">
+    <option value="JITENDER SAIGAL">
+    <option value="SANJEEV KUMAR">
+    <option value="MANJULA BHATI">
+    <option value="RAJNI YADAV">
+    <option value="V K MITTAL">
+    <option value="DHARAMVEER SINGH">
+    <option value="PRAHLAD GUPTA">
+    <option value="MANOJ KUMAR SAXENA">
+    <option value="SHEO PRASHAD">
+    <option value="R M AMARYA">
+    <option value="PRADEEP GUNJAYAL">
+    <option value="RAM SNEHI">
+    <option value="ASHOK KUMAR">
+    <option value="VIVEK KASHYAP">
+    <option value="PRAKASH MOTWANI">
+    <option value="MAHAVEER PRASHAD">
+    <option value="PRAVEEN JAHAN">
+    <option value="FINAL">
     </datalist>
 
     <label><b>Email</b></label>
@@ -63,7 +122,7 @@ mysql_close($dbhandle);
     <input type="text" placeholder="Confirm Password" id="confirm_password" name="confirm_password" required>
 
     <input type="checkbox" name="terms" id="terms" /> Agree
-    <p>By creating an account you agree to our <a href="Terms_Privacy.html" target="_blank">Terms & Privacy</a>.</p>
+    <p>By creating an account you agree to our <a href="Terms_And_Conditions.html" target="_blank">Terms & Conditions</a>.</p>
 
     <div class="clearfix">
       <button type="submit" class="signupbtn"><b>Sign Up</b></button>

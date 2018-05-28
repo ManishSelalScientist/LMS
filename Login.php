@@ -1,56 +1,30 @@
 <?php
-session_start();
-?>
-
-<?php
-$_SESSION["userid"]= $_POST['id'];
-$_SESSION["password"]= $_POST['password'];
-
-?>
-
-<?php 
-$username = "root";
-$password = "";
-$hostname = "localhost:3388";
-
-//connection to the database
-$dbhandle = mysql_connect($hostname, $username, $password) 
- or die("Unable to connect to MySQL");
-
-$userid= $_POST['id'];
-$password= $_POST['password'];
-
-mysql_select_db("leavemanagement",$dbhandle) 
-  or die("Could not select examples");
-
-$login = mysql_query("SELECT * FROM userinfo WHERE (User_Id = '$userid') and (Password = '$password')");
-
-if (mysql_num_rows($login)) {
-	if($userid== "123456")
-		{
-			mysql_close($dbhandle);
-			header('Location:Admin_Dashboard.php');
-		}
-	else
-		{
-			while ($row = mysql_fetch_array($login)){
-				$reportingtext = "'" .$row['User_Name']."'";
-			}
-			
-			$row1 = mysql_query("SELECT * FROM leaves WHERE Reporting_Officer = $reportingtext");
-			if(mysql_num_rows($row1)){
-				mysql_close($dbhandle);
-				header('Location:Reporting_Officer_Dashboard.php');	
-			}
-			else{
-				mysql_close($dbhandle);
-				header('Location:User_Dashboard.php');
-			}
-		}
-	}
-else
-{
-	mysql_close($dbhandle);
-	header('Location:Login.html');
+function _e($string){
+    echo htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+    //echo htmlentities($string, ENT_QUOTES, 'UTF-8');
 }
 ?>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="Login.css">
+  <h1>Welcome To <a style="display: inline; color:red" href='About.html'><b>STQC</b></a> LMS</h1>
+</head>
+<body>
+  <div class="login-page">
+  <div class="form">
+    <form class="login-form" autocomplete="off" method="post" action="Login_Next.php">
+      <input type="number" name="id" id="id" placeholder="User Id"/>
+      <input type="password" name="password" id="password" placeholder="Password"/>
+      <button><b>Login</b></button>
+      <p class="message"><b><?php _e('Not registered?')?> &nbsp;</b><a href="Sign_Up_Form_First.php"><b><?php _e('Create an account')?></b></a></p>
+    </form>
+  </div>
+</div>
+</body>
+<footer>
+  <p><b>&copy; 2017 STQC ERTL(N)</b><p>
+</footer>
+</html>

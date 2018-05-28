@@ -39,7 +39,7 @@ mysql_close($dbhandle);
     	<li><a class="drop">HR Admin</a>
     		<div class="dropdown_HR_Admin">
 				<div class="col_1">
-					<p><a href="#">Link1</a></p>
+					<p><a href="Leave_Balance_CMS.php">Leave Balance Update</a></p>
                 </div>
                 <div class="col_2">
                     <p><a href="#">Link2</a></p>
@@ -74,6 +74,7 @@ mysql_close($dbhandle);
 				<th>ML</th>
 				<th>HPL</th>
 				<th>CCL</th>
+				<th>CCL_NO</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -95,6 +96,7 @@ mysql_close($dbhandle);
 				<td>'.$row['ML'].'</td>
 				<td>'.$row['HPL'].'</td>
 				<td>'.$row['CCL'].'</td>
+				<td>'.$row['CCL_NO'].'</td>
 				</tr>';
 				$no++;
 			}

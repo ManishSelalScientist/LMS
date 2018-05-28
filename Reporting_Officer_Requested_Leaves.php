@@ -45,7 +45,10 @@ mysql_close($dbhandle);
   </ul>
 </div>
 <br>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+<input type="text" id="myInput1" onkeyup="myFunction1()" placeholder="Search for Names">
+<input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Search for User Id">
+<input type="text" id="myInput3" onkeyup="myFunction3()" placeholder="Search for Department">
+<input type="text" id="myInput4" onkeyup="myFunction4()" placeholder="Search for Type">
 <br>
 	<h1>Requested Leaves</h1>
 	<br>
@@ -58,6 +61,7 @@ mysql_close($dbhandle);
 				<th>Department</th>
 				<th>Designation</th>
 				<th>Leave Type</th>
+				<th>Duration</th>
 				<th>From Date</th>
 				<th>To Date</th>
 				<th>Days</th>
@@ -82,14 +86,15 @@ mysql_close($dbhandle);
 				    <td>'.$row['Department'].'</td>
 				    <td>'.$row['Designation'].'</td>
 				    <td>'.$row['Leave_Type'].'</td>
+				    <td>'.$row['Duration'].'</td>
 				    <td>'.$row['From_Date'].'</td>
 				    <td>'.$row['To_Date'].'</td>
 				    <td>'.$row['Days'].'</td>
 				    <td>'.$row['Status'].'</td>
 				    <td>
-				    <button name="name" value="Approve '.$row['User_Id'].' '.$row['U_Id'].' '.$row['Leave_Type'].' '.$row['Days'].' '.$row['Status'].'" onclick="do_accept(this.value)">Approve</button>
+				    <button name="name" style="background-color:#99ff99; border:1px solid black;" value="Approve '.$row['User_Id'].' '.$row['U_Id'].' '.$row['Leave_Type'].' '.$row['Days'].' '.$row['Status'].'" onclick="do_accept(this.value)">Approve</button>
 
-                    <button name="name" value="Reject '.$row['User_Id'].' '.$row['U_Id'].' '.$row['Leave_Type'].' '.$row['Days'].'" '.$row['Status'].' onclick="do_reject(this.value)">Reject</button>
+                    <button name="name" style="background-color:#f55858; border:1px solid black;" value="Reject '.$row['User_Id'].' '.$row['U_Id'].' '.$row['Leave_Type'].' '.$row['Days'].'" '.$row['Status'].' onclick="do_reject(this.value)">Reject</button>
 
                     </td>
 				    </tr>';
@@ -120,15 +125,18 @@ mysql_close($dbhandle);
 		var type = words[3];
 		var days = words[4];
 		var status = words[5];
-		window.location.href = "AcceptRejectForward.php?decision=" + decision +"&id=" + id +"&uid=" + uid +"&type=" + type +"&days=" + days +"&status=" +status;
+		var site = prompt("Please Enter Remark For Rejection", "Write Here Something");
+		if (site) {
+			window.location.href = "AcceptRejectForward.php?decision=" + decision +"&id=" + id +"&uid=" + uid +"&type=" + type +"&days=" + days +"&status=" +status +"&remark=" +site;
+		}
 	}
 </script>	
 <script type="text/javascript">	
-function myFunction() {
+function myFunction1() {
   // Declare variables 
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
+  var input1, filter1, table, tr, td, i;
+  input1 = document.getElementById("myInput1");
+  filter1 = input1.value.toUpperCase();
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
 
@@ -136,7 +144,74 @@ function myFunction() {
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[1];
     if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      if (td.innerHTML.toUpperCase().indexOf(filter1) > -1) 
+      {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+function myFunction2() {
+  // Declare variables 
+  var input2, filter2, table, tr, td, i;
+  input2 = document.getElementById("myInput2");
+  filter2 = input2.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter2) > -1) 
+      {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+function myFunction3() {
+  // Declare variables 
+  var input3, filter3, table, tr, td, i;
+  input3 = document.getElementById("myInput3");
+  filter3 = input3.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter3) > -1) 
+      {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+function myFunction4() {
+  // Declare variables 
+  var input2, filter2, table, tr, td, i;
+  input4 = document.getElementById("myInput4");
+  filter4 = input4.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[5];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter4) > -1) 
+      {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";

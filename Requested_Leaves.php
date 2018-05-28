@@ -47,7 +47,7 @@ mysql_close($dbhandle);
     	<li><a class="drop">HR Admin</a>
     		<div class="dropdown_HR_Admin">
 				<div class="col_1">
-					<p><a href="#">Link1</a></p>
+					<p><a href="Leave_Balance_CMS.php">Leave Balance Update</a></p>
                 </div>
                 <div class="col_2">
                     <p><a href="#">Link2</a></p>
@@ -76,10 +76,12 @@ mysql_close($dbhandle);
 				<th>Department</th>
 				<th>Designation</th>
 				<th>Leave Type</th>
+				<th>Duration</th>
 				<th>From Date</th>
 				<th>To Date</th>
 				<th>Days</th>
 				<th>Status</th>
+				<th>Action</th>
 
 			</tr>
 		</thead>
@@ -99,10 +101,12 @@ mysql_close($dbhandle);
 				    <td>'.$row['Department'].'</td>
 				    <td>'.$row['Designation'].'</td>
 				    <td>'.$row['Leave_Type'].'</td>
+				    <td>'.$row['Duration'].'</td>
 				    <td>'.$row['From_Date'].'</td>
 				    <td>'.$row['To_Date'].'</td>
 				    <td>'.$row['Days'].'</td>
 				    <td>'.$row['Status'].'</td>
+				    <td><button name="name" style="background-color:#f55858; border:1px solid black;" value="Reject '.$row['User_Id'].' '.$row['U_Id'].' '.$row['Leave_Type'].' '.$row['Days'].'" '.$row['Status'].' onclick="do_reject(this.value)">Cancel</button></td>
 				    </tr>';
 					}
 				$no++;
@@ -133,6 +137,19 @@ function myFunction() {
     } 
   }
 }
+</script>
+
+<script type="text/javascript">
+	function do_reject(r1) {
+		var words = r1.split(" ");
+		var decision = words[0];
+		var id = words[1];
+		var uid = words[2];
+		var type = words[3];
+		var days = words[4];
+		var status = words[5];
+		window.location.href = "Approved_Leaves_Cancel.php?decision=" + decision +"&id=" + id +"&uid=" + uid +"&type=" + type +"&days=" + days +"&status=" +status;
+	}
 </script>
 </body>
 	</html>

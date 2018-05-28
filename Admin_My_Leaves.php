@@ -47,7 +47,7 @@ mysql_close($dbhandle);
     	<li><a class="drop">HR Admin</a>
     		<div class="dropdown_HR_Admin">
 				<div class="col_1">
-					<p><a href="#">Link1</a></p>
+					<p><a href="Leave_Balance_CMS.php">Leave Balance Update</a></p>
                 </div>
                 <div class="col_2">
                     <p><a href="#">Link2</a></p>
@@ -69,15 +69,15 @@ mysql_close($dbhandle);
 		<thead>
 			<tr>
 				<th>SNo</th>
-				<th>User Name</th>
-				<th>User Id</th>
-				<th>Department</th>
-				<th>Designation</th>
 				<th>Leave Type</th>
+				<th>Duration</th>
 				<th>From Date</th>
 				<th>To Date</th>
 				<th>Days</th>
 				<th>Status</th>
+				<th>Remarks</th>
+				<th>Action</th>
+				<th>Print</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -85,24 +85,66 @@ mysql_close($dbhandle);
 			$no = 1;
 			while ($row = mysql_fetch_array($sql))
 			{
-				echo '
-				<tr>
-				<td>'.$no.'</td>
-				<td>'.$row['User_Name'].'</td>
-				<td>'.$row['User_Id'].'</td>
-				<td>'.$row['Department'].'</td>
-				<td>'.$row['Designation'].'</td>
-				<td>'.$row['Leave_Type'].'</td>
-				<td>'.$row['From_Date'].'</td>
-				<td>'.$row['To_Date'].'</td>
-				<td>'.$row['Days'].'</td>
-				<td>'.$row['Status'].'</td>
-				</tr>';
+				if ($row['Status']=='Pending' || $row['Status']=='Forwarded') {
+					echo '
+				    <tr>
+				    <td>'.$no.'</td>
+				    <td>'.$row['Leave_Type'].'</td>
+				    <td>'.$row['Duration'].'</td>
+				    <td>'.$row['From_Date'].'</td>
+				    <td>'.$row['To_Date'].'</td>
+				    <td>'.$row['Days'].'</td>
+				    <td>'.$row['Status'].'</td>
+				    <td>'.$row['Remarks'].'</td>
+				    <td><button name="name" style="background-color:#f55858; border:1px solid black;" value="Reject '.$row['User_Id'].' '.$row['U_Id'].' '.$row['Leave_Type'].' '.$row['Days'].'" '.$row['Status'].' onclick="do_reject(this.value)">Cancel</button></td>
+				    <td><button name="name" style="background-color:#99ff99; border:1px solid black;" value="Print '.$row['User_Id'].' '.$row['Designation'].' '.$row['Department'].' '.$row['Days'].' '.$row['Leave_Type'].' '.$row['From_Date'].' '.$row['To_Date'].'" onclick="do_Print(this.value)">Print</button></td>
+				    </tr>';
+				}
+				else{
+					echo '
+				    <tr>
+				    <td>'.$no.'</td>
+				    <td>'.$row['Leave_Type'].'</td>
+				    <td>'.$row['Duration'].'</td>
+				    <td>'.$row['From_Date'].'</td>
+				    <td>'.$row['To_Date'].'</td>
+				    <td>'.$row['Days'].'</td>
+				    <td>'.$row['Status'].'</td>
+				    <td>'.$row['Remarks'].'</td>
+				    <td>Non Cancelable</td>
+				    <td><button name="name" style="background-color:#99ff99; border:1px solid black;" value="Print '.$row['User_Id'].' '.$row['Designation'].' '.$row['Department'].' '.$row['Days'].' '.$row['Leave_Type'].' '.$row['From_Date'].' '.$row['To_Date'].'" onclick="do_Print(this.value)">Print</button></td>
+				    </tr>';
+				}
 				$no++;
 			}
 			?>
 				
-			</tbody>
-		</table>
-	</body>
+		</tbody>
+	</table>
+<script type="text/javascript">
+	function do_reject(r1) {
+		var words = r1.split(" ");
+		var decision = words[0];
+		var id = words[1];
+		var uid = words[2];
+		var type = words[3];
+		var days = words[4];
+		var status = words[5];
+		window.location.href = "Admin_Cancel.php?decision=" + decision +"&id=" + id +"&uid=" + uid +"&type=" + type +"&days=" + days +"&status=" +status;
+	}
+
+	function do_Print(r1) {
+		var words = r1.split(" ");
+		var decision = words[0];
+		var useri = words[1];
+		var designation = words[2];
+		var department = words[3];
+		var days = words[4];
+		var type = words[5];
+		var fromdate = words[6];
+		var todate = words[7];
+		window.location.href = "Admin_Print.php?decision=" + decision + "$useri=" + useri +"&designation=" + designation +"&department=" + department +"&days=" + days +"&type=" + type +"&fromdate=" +fromdate +"&todate=" +todate;
+	}
+</script>
+</body>
 </html>

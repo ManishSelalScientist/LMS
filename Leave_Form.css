@@ -1,0 +1,14 @@
+body {
+  display: box;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+div {
+    height: 200px;
+    width: 70%;
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+}

@@ -6,6 +6,13 @@ session_start();
 $loggedinuser = $_SESSION["userid"];
 ?>
 
+<?php
+function _e($string){
+    echo htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+    //echo htmlentities($string, ENT_QUOTES, 'UTF-8');
+}
+?>
+
 <?php 
 $username = "root";
 $password = "";
@@ -24,6 +31,7 @@ mysql_close($dbhandle);
 
 <html>
 <head>
+  <meta charset="UTF-8">
 	<title>Dashboard</title>
   <link rel="stylesheet" type="text/css" href="Dashboard.css">
 </head>
@@ -37,8 +45,8 @@ mysql_close($dbhandle);
     <li class="menu_right"><a href="Sign_Out.php">Sign Out</a></li>
   </ul>
 <br>
-<p><b>Leave Management System!</b></p>
-<p>This is your Dashboard, From here you can navigate through whole application.</p>
+<p><b><?php _e('Leave Management System!')?></b></p>
+<p><?php _e("This is your Dashboard, From here you can navigate through whole application.")?></p>
 
 <?php
 while ($row = mysql_fetch_array($sql)){

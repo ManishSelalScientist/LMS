@@ -55,6 +55,7 @@ mysql_close($dbhandle);
 				<th>ML</th>
 				<th>HPL</th>
 				<th>CCL</th>
+				<th>CCL_NO</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -76,6 +77,7 @@ mysql_close($dbhandle);
 				<td>'.$row['ML'].'</td>
 				<td>'.$row['HPL'].'</td>
 				<td>'.$row['CCL'].'</td>
+				<td>'.$row['CCL_NO'].'</td>
 				</tr>';
 				$no++;
 			}

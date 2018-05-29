@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 ?>
 
@@ -58,7 +58,7 @@ while($row = mysql_fetch_array($sql1)){
         <li><a class="drop">HR Admin</a>
             <div class="dropdown_HR_Admin">
                 <div class="col_1">
-                    <p><a href="Leave_Balance_CMS.php">Leave Balance Update</a></p>
+                    <p><a href="#">Link1</a></p>
                 </div>
                 <div class="col_2">
                     <p><a href="#">Link2</a></p>
@@ -265,8 +265,8 @@ $reporting = $row['Reporting_Officer'];
     }
 </script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>‌​
+<script src="jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>‌​
 <script>    
 $('#leavetype').on('change',function(){
      var selection = $(this).val();

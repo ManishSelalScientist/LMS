@@ -52,7 +52,7 @@ if (!mysql_query($sql1, $dbhandle))
 //close the connection
 mysql_close($dbhandle);
 
-header("refresh:10;url=Login.php");
+header("refresh:10;url=Login.html");
 echo "New Account Created" . "<br />";
 echo "User Name : $user" . "<br />";
 echo "User Id : $userid" . "<br />";

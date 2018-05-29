@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 ?>
 
@@ -239,7 +239,7 @@ $reporting = $row['Reporting_Officer'];
     }
 </script>
 
-<script src="jquery.min.js" ></script>
+<script src="jquery.min.js"></script>
 <script src="jquery-ui.min.js"></script>‌​
 <script>    
 $('#leavetype').on('change',function(){

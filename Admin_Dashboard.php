@@ -4,18 +4,6 @@ session_start();
 
 <?php
 $loggedinuser = $_SESSION["userid"];
-if(!isset($loggedinuser)) // not logged in
-{  
-        header('Location: Login.php');
-        exit();
-}
-?>
-
-<?php
-function _e($string){
-    echo htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
-    //echo htmlentities($string, ENT_QUOTES, 'UTF-8');
-}
 ?>
 
 <?php 
@@ -36,17 +24,16 @@ mysql_close($dbhandle);
 
 <html>
 <head>
-    <meta charset="UTF-8">
 	<title>Admin Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="Dashboard.css">
+  <link rel="stylesheet" type="text/css" href="Dashboard.css">
 </head>
-<body>
+<body>	
 	<ul id = "menu">
 		<li><a href="Admin_Dashboard.php">Home</a></li>
 		<li><a class="drop">Admin</a>
 			<div class="dropdown_Admin">
 				<div class="col_1">
-					<p><a href="List_Users.php" >Users</a></p>
+					<p><a href="List_Users.php">Users</a></p>
                 </div>
                 <div class="col_2">
                     <p><a href="Create.html">Create</a></p>
@@ -59,7 +46,7 @@ mysql_close($dbhandle);
     	<li><a class="drop">HR Admin</a>
     		<div class="dropdown_HR_Admin">
 				<div class="col_1">
-					<p><a href="Leave_Balance_CMS.php">Leave Balance Update</a></p>
+					<p><a href="#">Link1</a></p>
                 </div>
                 <div class="col_2">
                     <p><a href="#">Link2</a></p>
@@ -75,15 +62,16 @@ mysql_close($dbhandle);
 		<li class="menu_right"><a href="Sign_Out.php">Sign Out</a></li>
 	</ul>
 <br>
-<p><b><?php _e('Leave Management System!')?></b></p>
-<p><?php _e("This is Admin's Dashboard, From here Admin can navigate through whole application.")?></p>
+<p><b>Leave Management System!</b></p>
+<p>This is Admin's Dashboard, From here Admin can navigate through whole application.</p>
 
 <?php
 while ($row = mysql_fetch_array($sql)){
 echo "User Name   -" .$row['User_Name'] . "<br />";	
 echo "User Id     -" .$row['User_Id'] . "<br />";
-echo "Department  -" .$row['Department'] . "<br />";
 echo "Designation -" .$row['Designation'] . "<br />";
+echo "Department  -" .$row['Department'] . "<br />";
+echo "Reporting Officer -" .$row['Reporting_Officer'] . "<br />";
 }
 ?>
 	</body>

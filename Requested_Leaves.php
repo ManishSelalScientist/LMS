@@ -47,7 +47,7 @@ mysql_close($dbhandle);
     	<li><a class="drop">HR Admin</a>
     		<div class="dropdown_HR_Admin">
 				<div class="col_1">
-					<p><a href="Leave_Balance_CMS.php">Leave Balance Update</a></p>
+					<p><a href="#">Link1</a></p>
                 </div>
                 <div class="col_2">
                     <p><a href="#">Link2</a></p>

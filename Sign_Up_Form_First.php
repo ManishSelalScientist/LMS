@@ -26,14 +26,14 @@ mysql_close($dbhandle);
     <input type="number" maxlength="6" placeholder="Enter Id" id="id" name="id" required>
 
     <label><b>Gender</b></label>
-    <input list="select_Gender" type="text" placeholder="Gender" id="gender" name="gender" onkeydown="upperCaseF(this)" required/>
+    <input list="select_Gender" type="text" placeholder="Gender" id="gender" name="gender" required/>
     <datalist id="select_Gender">
-    <option value="Male">
-    <option value="Female">
+    <option value="MALE">
+    <option value="FEMALE">
     </datalist> 
 
     <label><b>Designation</b></label>
-    <input list="select_designation" type="text" placeholder="Designation" id="designation" name="designation" onkeydown="upperCaseF(this)" required/>
+    <input list="select_designation" type="text" placeholder="Designation" id="designation" name="designation" required/>
     <datalist id="select_designation">
     <option value="Scientist-B">
     <option value="Scientist-C">
@@ -68,7 +68,7 @@ mysql_close($dbhandle);
     </datalist>
 
     <label><b>Department</b></label>
-    <input list="select_department" type="text" placeholder="Enter Department" id="department" name="department" onkeydown="upperCaseF(this)"required>
+    <input list="select_department" type="text" placeholder="Enter Department" id="department" name="department" required>
     <datalist id="select_department">
     <option value="ADMINISTRATION">
     <option value="COMPONENT">
@@ -84,7 +84,7 @@ mysql_close($dbhandle);
     </datalist>
 
     <label><b>Reporting Officer</b></label>
-    <input list="select_reporting" type="text" placeholder="Reporting Officer" id="reporting" name="reporting" onkeydown="upperCaseF(this)"required>
+    <input list="select_reporting" type="text" placeholder="Reporting Officer" id="reporting" name="reporting" required>
     <datalist id="select_reporting">
     <option value="C S BISHT">
     <option value="SURESH CHANDRA">
@@ -107,7 +107,7 @@ mysql_close($dbhandle);
     <option value="VIVEK KASHYAP">
     <option value="PRAKASH MOTWANI">
     <option value="MAHAVEER PRASHAD">
-    <option value="PRAVEEN JAHAN">
+    <option value="PARVEEN JAHAN">
     <option value="FINAL">
     </datalist>
 

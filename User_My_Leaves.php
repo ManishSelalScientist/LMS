@@ -108,17 +108,17 @@ mysql_close($dbhandle);
 		window.location.href = "User_Cancel.php?decision=" + decision +"&id=" + id +"&uid=" + uid +"&type=" + type +"&days=" + days +"&status=" +status;
 	}
 
-	function do_Print(r1) {
+    function do_Print(r1) {
 		var words = r1.split(" ");
 		var decision = words[0];
-		var useri = words[1];
+		var userid = words[1];
 		var designation = words[2];
 		var department = words[3];
 		var days = words[4];
 		var type = words[5];
 		var fromdate = words[6];
 		var todate = words[7];
-		window.location.href = "User_Print.php?decision=" + decision + "$useri=" + useri +"&designation=" + designation +"&department=" + department +"&days=" + days +"&type=" + type +"&fromdate=" +fromdate +"&todate=" +todate;
+		window.location.href = "User_Print.php?decision=" + decision + "$userid=" + userid +"&designation=" + designation +"&department=" + department +"&days=" + days +"&type=" + type +"&fromdate=" +fromdate +"&todate=" +todate;
 	}
 </script>	
 </body>

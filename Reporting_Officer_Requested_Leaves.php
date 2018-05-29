@@ -45,10 +45,7 @@ mysql_close($dbhandle);
   </ul>
 </div>
 <br>
-<input type="text" id="myInput1" onkeyup="myFunction1()" placeholder="Search for Names">
-<input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Search for User Id">
-<input type="text" id="myInput3" onkeyup="myFunction3()" placeholder="Search for Department">
-<input type="text" id="myInput4" onkeyup="myFunction4()" placeholder="Search for Type">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 <br>
 	<h1>Requested Leaves</h1>
 	<br>
@@ -132,11 +129,11 @@ mysql_close($dbhandle);
 	}
 </script>	
 <script type="text/javascript">	
-function myFunction1() {
+function myFunction() {
   // Declare variables 
-  var input1, filter1, table, tr, td, i;
-  input1 = document.getElementById("myInput1");
-  filter1 = input1.value.toUpperCase();
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
 
@@ -144,74 +141,7 @@ function myFunction1() {
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[1];
     if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter1) > -1) 
-      {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-
-function myFunction2() {
-  // Declare variables 
-  var input2, filter2, table, tr, td, i;
-  input2 = document.getElementById("myInput2");
-  filter2 = input2.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[2];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter2) > -1) 
-      {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-
-function myFunction3() {
-  // Declare variables 
-  var input3, filter3, table, tr, td, i;
-  input3 = document.getElementById("myInput3");
-  filter3 = input3.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[3];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter3) > -1) 
-      {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-
-function myFunction4() {
-  // Declare variables 
-  var input2, filter2, table, tr, td, i;
-  input4 = document.getElementById("myInput4");
-  filter4 = input4.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[5];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter4) > -1) 
-      {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";

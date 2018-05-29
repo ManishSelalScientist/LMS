@@ -6,13 +6,6 @@ session_start();
 $loggedinuser = $_SESSION["userid"];
 ?>
 
-<?php
-function _e($string){
-    echo htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
-    //echo htmlentities($string, ENT_QUOTES, 'UTF-8');
-}
-?>
-
 <?php 
 $username = "root";
 $password = "";
@@ -30,7 +23,6 @@ $sql = mysql_query("SELECT * FROM userinfo WHERE User_Id = $loggedinuser");
 
 <html>
 <head>
-  <meta charset="UTF-8">
 	<title>Dashboard</title>
   <link rel="stylesheet" type="text/css" href="Dashboard.css">
 </head>
@@ -45,15 +37,16 @@ $sql = mysql_query("SELECT * FROM userinfo WHERE User_Id = $loggedinuser");
   <li class="menu_right"><a href="Sign_Out.php">Sign Out</a></li>
   </ul>
 <br>
-<p><b><?php _e('Leave Management System!')?></b></p>
-<p><?php _e("This is your Dashboard, From here you can navigate through whole application.")?></p>
+<p><b>Leave Management System!</b></p>
+<p>This is your Dashboard, From here you can navigate through whole application.</p>
 
 <?php
 while ($row = mysql_fetch_array($sql)){
 echo "User Name   -" .$row['User_Name'] . "<br />";	
 echo "User Id     -" .$row['User_Id'] . "<br />";
-echo "Department  -" .$row['Department'] . "<br />";
 echo "Designation -" .$row['Designation'] . "<br />";
+echo "Department  -" .$row['Department'] . "<br />";
+echo "Reporting Officer -" .$row['Reporting_Officer'] . "<br />";
 }
 mysql_close($dbhandle);
 ?>

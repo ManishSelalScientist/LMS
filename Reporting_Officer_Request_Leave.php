@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 ?>
 
@@ -241,8 +241,8 @@ $reporting = $row['Reporting_Officer'];
     }
 </script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>‌​
+<script src="jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>‌​
 <script>    
 $('#leavetype').on('change',function(){
      var selection = $(this).val();
